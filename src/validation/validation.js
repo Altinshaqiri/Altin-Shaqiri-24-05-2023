@@ -1,8 +1,8 @@
-export function isDuplicateName(data, nameItem, newName) {
+export function isDuplicateName(data, editedItem) {
   const duplicateItem = data.find(
-    (item) => item.name === newName && item.name !== nameItem
+    (item) => item.name === editedItem.name && item.id !== editedItem.id
   );
-  return !!duplicateItem; 
+  return !!duplicateItem;
 }
 
 export function validateFields(newUser) {

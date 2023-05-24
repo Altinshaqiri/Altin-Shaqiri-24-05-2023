@@ -199,16 +199,13 @@ export default {
       this.editModalOpen = false;
     },
 
+    
+
     saveChanges() {
-      this.isDuplicate = isDuplicateName(
-        this.sortedData,
-        this.editedItem,
-        this.editedItem.name
-      );
-
-      if (this.isDuplicate) {
-        this.showError = true;
-
+      this.showError=false;
+      const isDuplicate = isDuplicateName(this.sortedData,this.editedItem);
+      if(isDuplicate) {
+        this.showError=true;
         return;
       }
       this.$store.commit("EDIT_ITEM", {

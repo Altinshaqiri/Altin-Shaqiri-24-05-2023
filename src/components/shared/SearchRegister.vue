@@ -118,7 +118,7 @@ export default {
       };
       this.addItem(newUser);
       this.closeRegistrationModal();
-      this.loadDataFromLocalStorage(); // Ruaj të dhënat në localStorage
+      this.loadDataFromLocalStorage(); 
     },
 
     resetNewUser() {
