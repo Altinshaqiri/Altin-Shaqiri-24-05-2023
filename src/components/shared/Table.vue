@@ -183,11 +183,6 @@ export default {
       this.$store.dispatch("refreshSortedData");
     },
 
-    changePages(e) {
-      const page = parseInt(e.target.value);
-      this.changePage(page);
-    },
-
     openEditModal(item) {
       this.editedItem.id = item.id;
       this.editedItem.name = item.name;
@@ -199,13 +194,12 @@ export default {
       this.editModalOpen = false;
     },
 
-    
-
     saveChanges() {
-      this.showError=false;
-      const isDuplicate = isDuplicateName(this.sortedData,this.editedItem);
-      if(isDuplicate) {
-        this.showError=true;
+      this.showError = false;
+      const isDuplicate = isDuplicateName(this.sortedData, this.editedItem);
+
+      if (isDuplicate) {
+        this.showError = true;
         return;
       }
       this.$store.commit("EDIT_ITEM", {

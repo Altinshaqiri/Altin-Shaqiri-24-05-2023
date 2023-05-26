@@ -83,8 +83,7 @@ export default {
       if (this.newUser.name && this.newUser.city && this.newUser.date) {
         const isDuplicate = isDuplicateName(
           this.$parent.sortedData,
-          this.newUser,
-          this.newUser.name
+          this.newUser
         );
         this.internalShowError = isDuplicate;
       } else {

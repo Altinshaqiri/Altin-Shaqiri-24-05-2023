@@ -52,7 +52,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex";
-import RegjisterModal from "../Dashboard/Home/RegjisterModal.vue"
+import RegjisterModal from "../Dashboard/Home/RegjisterModal.vue";
 import { isDuplicateName } from "../../validation/validation.js";
 
 export default {
@@ -102,10 +102,11 @@ export default {
     },
 
     registerUser() {
+      this.showError=false;
       this.isDuplicate = isDuplicateName(
         this.sortedData,
         this.newUser,
-        this.newUser.name
+        
       );
 
       if (this.isDuplicate) {
@@ -118,7 +119,7 @@ export default {
       };
       this.addItem(newUser);
       this.closeRegistrationModal();
-      this.loadDataFromLocalStorage(); 
+      this.loadDataFromLocalStorage();
     },
 
     resetNewUser() {

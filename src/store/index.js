@@ -136,10 +136,7 @@ export default new Vuex.Store({
     sortData({ commit }, payload) {
       commit("SORT_DATA", payload);
     },
-    changePage({ commit }, page) {
-      commit("SET_CURRENT_PAGE", page);
-      commit("refreshSortedData");
-    },
+   
     refreshSortedData({ commit, state }) {
       const payload = {
         column: state.sort.column,

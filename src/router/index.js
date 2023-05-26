@@ -35,7 +35,7 @@ const routes = [
          {
           path: '/archive',
           name: 'Archive',
-           component: ArchiveView
+           component: ArchiveView 
          },
     ],
   }
@@ -60,4 +60,9 @@ router.beforeEach((to,from,next) =>{
     next();
   }
 })
+
+
+
 export default router
+
+
